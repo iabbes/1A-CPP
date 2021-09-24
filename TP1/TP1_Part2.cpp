@@ -26,6 +26,7 @@ void tennis (int J1, int J2){
         string msgGagnantJ2 = "Joueur 2 gagne le jeu !";
         int echangeTotal = somme(J1,J2);
 
+        //système comptage de point
         while(echangeTotal > 0 && scoreJ1 != msgGagnantJ1 && scoreJ2 != msgGagnantJ2){
                 if (J1 > 0 && scoreJ1 == "0"){
                         scoreJ1 = "15";
@@ -62,25 +63,26 @@ void tennis (int J1, int J2){
                         J2--;
                 }
                 else if (J1 > 0 && scoreJ1 == "40A"){
-                        if (scoreJ2 == "AV"){
+                        if (scoreJ2 == "AV"){ //retour à égalité
                                 scoreJ1 = "40A";
-                                scoreJ2 = "40A"; //retour à égalité
+                                scoreJ2 = "40A"; 
                         }
                         else{      
-                                scoreJ1 = "AV"; // avantage 
+                                scoreJ1 = "AV"; 
                         }
                         J1--;
                 }                
                 else if (J2 > 0 && scoreJ2 == "40A"){
-                        if (scoreJ1 == "AV"){
+                        if (scoreJ1 == "AV"){ //retour à égalité
                                 scoreJ1 = "40A";
                                 scoreJ2 = "40A";
                         }
                         else{     
-                                scoreJ2 = "AV"; // Egalité
+                                scoreJ2 = "AV"; 
                         }
                         J2--;
                 }
+                //dernier point pour remporter le jeu
                 else if (J1 > 0 && ((scoreJ1 == "40") || (scoreJ1 == "AV"))){
                         scoreJ1 = msgGagnantJ1;
                 }
